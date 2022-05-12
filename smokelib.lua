@@ -189,21 +189,6 @@ function DrawRectUsingMiddlePoint(pointx, pointy, width, height, color)
     --ty murten for improving this
 end
 
-function DrawRectWithOutlineUsingMiddlePoint2(pointx, pointy, width, height, colormainR, colormainG, colormainB, colormainA, colorpaddingR, colorpaddingG, colorpaddingB, colorpaddingA, amountpadding)
-    --top left point is (pointx - width * 0.5), (pointy - height * 0.5)
-    local topLeft = {x = (pointx - width * 0.5), y = (pointy - height * 0.5)}
-    --main rectangle
-    directx.draw_rect(topLeft.x, topLeft.y, width, height, colormainR, colormainG, colormainB, colormainA)
-    --top rectangle outline
-    directx.draw_rect(topLeft.x, topLeft.y - amountpadding, width, amountpadding, colorpaddingR, colorpaddingG, colorpaddingB, colorpaddingA)
-    --bottom rectangle
-    directx.draw_rect(topLeft.x, topLeft.y + height, width, amountpadding, colorpaddingR, colorpaddingG, colorpaddingB, colorpaddingA)
-    --left rectangle
-    directx.draw_rect(topLeft.x - amountpadding, topLeft.y - amountpadding, amountpadding, height + amountpadding*2, colorpaddingR, colorpaddingG, colorpaddingB, colorpaddingA)
-    --right rectangle
-    directx.draw_rect(topLeft.x + width, topLeft.y - amountpadding, amountpadding, height + amountpadding * 2, colorpaddingR, colorpaddingG, colorpaddingB, colorpaddingA)
-end
-
 function DrawRectWithOutlineUsingMiddlePoint(pointx, pointy, width, height, colormain, colorpadding, amountpadding)
     --top left point is (pointx - width * 0.5), (pointy - height * 0.5)
     local topLeft = {x = (pointx - width * 0.5), y = (pointy - height * 0.5)}
@@ -251,13 +236,6 @@ end
 
 function DrawTexture(id, sizex, sizey, centerx, centery, posx, posy, rotation, color)
     directx.draw_texture(id, sizex, sizey, centerx, centery, posx, posy, rotation, color)
-end
-
-function GetTopLeftCornerOfText(textX, textY, string, scale)
-    local textwidth, textheight = directx.get_text_size(string, scale)
-    local newX = textX - (textwidth / 2)
-    local newY = textY
-    return newX, newY
 end
 
 function GetTextureSize(windowX, windowY, textureX, textureY, sizeX, sizeY)
