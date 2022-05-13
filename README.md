@@ -125,9 +125,10 @@ Input values for `r` `g` and `b` are 0 - 255 (standard), while `a` takes an inpu
     - Mouse Y position
 
 ## CheckForControlJustPressedOnScreen
---args: `(startx, starty, endx, endy, intcontrol)`
+--args: `(startx, starty, endx, endy, intcontrol, disable)`
 - Checks whether a control with value of `intcontrol` has ***just been pressed*** while your mouse cursor is between a box, using the `start` inputs for the borders of the box.
 - Useful for clicking on GUI elements
+- Can now disable the control you set the checking to, to not mess with gameplay. Enabled by default.
 - Inputs:
     - Starting X of the checking box
     - Starting Y of the checking box
@@ -135,9 +136,10 @@ Input values for `r` `g` and `b` are 0 - 255 (standard), while `a` takes an inpu
     - Ending Y of the checking box
     - The control value
         - These can be found at the [FiveM docs](https://docs.fivem.net/docs/game-references/controls/)
+    - Whether or not to disable the control action.
 
 ## CheckForControlPressedOnScreen
---args: `(startx, starty, endx, endy, intcontrol)`
+--args: `(startx, starty, endx, endy, intcontrol, disable)`
 - Checks whether a control with value of `intcontrol` has ***been pressed*** while your mouse curosr is between a box, using the `start` inputs for the borders of the box.
 - Useful for whether something needs to be held down, or dragging items.
 - Check the above function `CheckForControlJustPressedOnScreen` for input values.
